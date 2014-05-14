@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.jboss.keynote2014</groupId>
+    <artifactId>root</artifactId>
+    <version>1.1.6</version>
+    <packaging>pom</packaging>
+    <name>Keynote 2014 root pom</name>
+    <description>Keynote 2014 root pom</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <modules>
+        <module>parent</module>
+        <module>salesforce</module>
+        <module>twitter</module>
+        <module>json</module>
+        <module>twilio</module>
+        <module>CustomerFollowUpWIH</module>
+        <module>CustomerFollowUpClient</module>
+    </modules>
+</project>

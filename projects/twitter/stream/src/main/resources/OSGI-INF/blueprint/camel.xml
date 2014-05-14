@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+  <cm:property-placeholder id="twitterConfig" persistent-id="jboss.keynote2014.twitter"/>
+
+  <bean id="twitterConvertBean" class="org.jboss.keynote2014.twitter.TwitterConvertBean">
+    <property name="id" value="${tweet.id}"/>
+    <property name="date" value="${tweet.date}"/>
+    <property name="name" value="${tweet.name}"/>
+    <property name="screenName" value="${tweet.screenName}"/>
+    <property name="text" value="${tweet.text}"/>
+    <property name="tag" value="${tweet.tag}"/>
+  </bean>
+
+  <camelContext id="keynote2014-twitter" xmlns="http://camel.apache.org/schema/blueprint">
+
+    <propertyPlaceholder id="properties" location="blueprint:twitterConfig"/>
+
+    <route id="twitter-stream">
+      <from uri="twitter://streaming/filter?type=event&amp;keywords={{twitter.keywords}}
+                      &amp;accessToken={{access.token}}&amp;accessTokenSecret={{access.token-secret}}&amp;consumerKey={{consumer.key}}&amp;consumerSecret={{consumer.secret}}"/>
+      <log message=">>> ${body.user.screenName} tweeted: ${body.text}"/>
+      <to uri="bean:twitterConvertBean"/>
+      <marshal>
+        <json library="Jackson"/>
+      </marshal>
+      <to uri="amq:queue:tweets?jmsMessageType=Text"/>
+    </route>
+
+  </camelContext>
+
+</blueprint>

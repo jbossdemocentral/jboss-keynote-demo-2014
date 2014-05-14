@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.jboss.keynote2014</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.1.6</version>
+        <relativePath>../../parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>twitter-stream</artifactId>
+    <packaging>bundle</packaging>
+    <name>Keynote 2014 Twitter Stream</name>
+    <description>Keynote 2014 Twitter Stream</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <version.twitter4j>3.0.5_1</version.twitter4j>
+
+        <!-- fabric8 deploy profile configuration -->
+        <fabric8.parentProfiles>feature-camel</fabric8.parentProfiles>
+        <fabric8.profile>keynote-twitter-stream</fabric8.profile>
+        <fabric8.features>camel-twitter camel-jackson mq-fabric-camel</fabric8.features>
+        <fabric8.featureRepos>mvn:org.apache.camel.karaf/apache-camel/${version:camel}/xml/features</fabric8.featureRepos>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.twitter4j</artifactId>
+            <version>${version.twitter4j}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-blueprint</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>twitter-stream</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>fabric8-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,11 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+	logallrefupdates = false
+[remote "origin"]
+	url = https://github.com/pzapataf/kie-examples.git
+	fetch = +refs/heads/*:refs/heads//*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master

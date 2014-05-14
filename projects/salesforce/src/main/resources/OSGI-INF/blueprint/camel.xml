@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+  <cm:property-placeholder id="salesforceConfig" persistent-id="jboss.keynote2014.salesforce"/>
+
+  <bean id="salesforceBean" class="org.jboss.keynote2014.salesforce.Salesforce">
+    <property name="salesforce" value="${tweet.salesforce}"/>
+    <property name="screenName" value="${tweet.screenName}"/>
+    <property name="email" value="${tweet.email}"/>
+    <property name="mobilePhone" value="${tweet.mobilePhone}"/>
+    <property name="dbTrue" value="${db.true}"/>
+    <property name="dbFalse" value="${db.false}"/>
+  </bean>
+
+  <bean id="bpmnBean" class="org.jboss.keynote2014.salesforce.InvokeBPMN">
+    <property name="salesforce" value="${tweet.salesforce}"/>
+    <property name="name" value="${tweet.name}"/>
+    <property name="screenName" value="${tweet.screenName}"/>
+    <property name="text" value="${tweet.text}"/>
+    <property name="email" value="${tweet.email}"/>
+    <property name="mobilePhone" value="${tweet.mobilePhone}"/>
+    <property name="deploymentID" value="${bpmn.deploymentId}"/>
+    <property name="deploymentVersion" value="${bpmn.deploymentVersion}"/>
+    <property name="processID" value="${bpmn.processID}"/>
+    <property name="username" value="${bpmn.username}"/>
+    <property name="password" value="${bpmn.password}"/>
+    <property name="baseURI" value="${bpmn.baseURI}"/>
+    <property name="dbTrue" value="${db.true}"/>
+  </bean>
+
+  <camelContext id="keynote2014-salesforce" errorHandlerRef="myDLC" xmlns="http://camel.apache.org/schema/blueprint">
+
+    <propertyPlaceholder location="blueprint:salesforceConfig" id="properties"/>
+
+    <errorHandler id="myDLC"
+                  type="DeadLetterChannel"
+                  deadLetterUri="amq:queue:tweets.DLQ"
+                  useOriginalMessage="true">
+      <redeliveryPolicy logHandled="true" maximumRedeliveries="5" redeliveryDelay="1000"/>
+    </errorHandler>
+
+    <route id="salesforce">
+      <from uri="amq:queue:tweets?concurrentConsumers=1"/>
+      <unmarshal>
+        <json library="Jackson"/>
+      </unmarshal>
+      <log message="### Received tweet ${body}"/>
+      <log message="Checking salesforce"/>
+      <to uri="bean:salesforceBean"/>
+      <log message="Inserting into database"/>
+      <to uri="mybatis:insert?statementType=Insert"/>
+      <log message="Checking BPMN"/>
+      <to uri="bean:bpmnBean"/>
+    </route>
+
+  </camelContext>
+
+</blueprint>

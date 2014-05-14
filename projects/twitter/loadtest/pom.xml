@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.jboss.keynote2014</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.1.6</version>
+        <relativePath>../../parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>twitter-loadtest</artifactId>
+    <packaging>jar</packaging>
+    <name>Keynote 2014 Twitter Load Test</name>
+    <description>Keynote 2014 Twitter Load Test</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <version.twitter4j>3.0.5_1</version.twitter4j>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.twitter4j</artifactId>
+            <version>${version.twitter4j}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>twitter-loadtest</finalName>
+    </build>
+</project>

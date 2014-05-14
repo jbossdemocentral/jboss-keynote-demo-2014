@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+  <cm:property-placeholder id="twitterTimerConfig" persistent-id="jboss.keynote2014.twitterTimer"/>
+
+  <bean id="testTweetBean" class="org.jboss.keynote2014.twitter.timer.TestTweet">
+    <property name="id" value="${tweet.id}"/>
+    <property name="date" value="${tweet.date}"/>
+    <property name="name" value="${tweet.name}"/>
+    <property name="screenName" value="${tweet.screenName}"/>
+    <property name="text" value="${tweet.text}"/>
+    <property name="tag" value="${tweet.tag}"/>
+  </bean>
+
+  <camelContext id="keynote2014-twitter-timer" xmlns="http://camel.apache.org/schema/blueprint">
+    <propertyPlaceholder location="blueprint:twitterTimeConfig" id="properties"/>
+
+    <route id="tweetTimer">
+      <from uri="timer://keynote?fixedRate=true&amp;period=3s"/>
+      <to uri="bean:testTweetBean"/>
+      <log message="&gt;&gt;&gt; Created test tweet ${body}"/>
+      <marshal>
+        <json library="Jackson"/>
+      </marshal>
+      <to uri="amq:queue:tweets?jmsMessageType=Text"/>
+    </route>
+
+  </camelContext>
+
+</blueprint>

@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.jboss.demo</groupId>
+  <artifactId>CustomerFollowUpClientWIH</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>Customer FollowUp Work Item Handlers</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+      <dependency>
+          <groupId>org.kie</groupId>
+          <artifactId>kie-api</artifactId>
+          <version>6.0.1.Final</version>
+         <type>jar</type>
+         <scope>provided</scope>
+      </dependency>  
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-entitymanager</artifactId>
+          <version>4.2.0.SP1</version>
+      </dependency>
+      <dependency>
+          <groupId>org.hibernate.javax.persistence</groupId>
+          <artifactId>hibernate-jpa-2.0-api</artifactId>
+          <version>1.0.1.Final</version>
+      </dependency>
+      <dependency>
+          <groupId>org.drools</groupId>
+          <artifactId>drools-persistence-jpa</artifactId>
+          <version>6.0.1.Final</version>
+      </dependency>
+      <dependency>
+          <groupId>javax.inject</groupId>
+          <artifactId>javax.inject</artifactId>
+          <version>1</version>
+      </dependency>
+      <dependency>
+          <groupId>org.jboss.keynote2014</groupId>
+          <artifactId>twilio</artifactId>
+          <version>1.1.6</version>
+      </dependency>
+
+      <!--dependency>
+          <groupId>org.jboss.demo</groupId>
+          <artifactId>customer-follow-up</artifactId>
+          <version>1.0</version>
+      </dependency-->
+
+  </dependencies>
+  
+   <repositories>
+      <repository>
+          <id>jboss</id>
+          <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+      </repository>
+  </repositories>
+</project>

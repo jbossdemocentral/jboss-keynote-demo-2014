@@ -1,0 +1,6 @@
+*.zip
+target/
+.DS_Store
+*.classpath
+*.settings
+.security/

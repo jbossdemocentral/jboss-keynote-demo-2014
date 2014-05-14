@@ -63,7 +63,7 @@ Issues
 
 Supporting articles
 -------------------
-![Original (1h) video of JBoss Keynote Demo 2014 in San Francisco](http://youtu.be/XPK2RTqlBxk)
+[Original (1h) video of JBoss Keynote Demo 2014 in San Francisco](http://youtu.be/XPK2RTqlBxk)
 
 
 Released versions

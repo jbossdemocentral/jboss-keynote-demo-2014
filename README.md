@@ -70,11 +70,11 @@ Released versions
 -----------------
 - v0.1 JBoss Fuse 6.1.0, Keynote demo installed.
 
-![Install Console](https://github.com/eschabell/jboss-keynote-2014/blob/master/docs/demo-images/install-console.png?raw=true)
-![MQ Broker](https://github.com/eschabell/jboss-keynote-2014/blob/master/docs/demo-images/fuse-runtime-broker.png?raw=true)
-![Creating Twitter Stream Container](https://github.com/eschabell/jboss-keynote-2014/blob/master/docs/demo-images/fuse-create-twitterstream-container.png?raw=true)
-![Twitter Stream Camel Route](https://github.com/eschabell/jboss-keynote-2014/blob/master/docs/demo-images/fuse-twitterstream-camel-route.png?raw=true)
-![Saleforce Camel Route](https://github.com/eschabell/jboss-keynote-2014/blob/master/docs/demo-images/fuse-salesforce-camel-route.png?raw=true)
+![Install Console](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/install-console.png?raw=true)
+![MQ Broker](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-runtime-broker.png?raw=true)
+![Creating Twitter Stream Container](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-create-twitterstream-container.png?raw=true)
+![Twitter Stream Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-twitterstream-camel-route.png?raw=true)
+![Saleforce Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-salesforce-camel-route.png?raw=true)
 
 
 

@@ -21,7 +21,7 @@
 
     <fabric8.parentProfiles>feature-camel</fabric8.parentProfiles>
     <fabric8.profile>keynote-salesforce</fabric8.profile>
-    <fabric8.bundles>mvn:mysql/mysql-connector-java/5.1.29 mvn:commons-pool/commons-pool/1.6 mvn:commons-dbcp/commons-dbcp/1.4</fabric8.bundles>
+    <fabric8.bundles>wrap:mvn:com.h2database/h2/1.4.178 mvn:commons-pool/commons-pool/1.6 mvn:commons-dbcp/commons-dbcp/1.4</fabric8.bundles>
     <fabric8.features>camel-http4 camel-mybatis camel-jackson camel-http4 camel-twitter mq-fabric-camel</fabric8.features>
     <fabric8.featureRepos>mvn:org.apache.camel.karaf/apache-camel/${version:camel}/xml/features</fabric8.featureRepos>
   </properties>
@@ -47,13 +47,13 @@
       <artifactId>json</artifactId>
     </dependency>
     <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.29</version>
-    </dependency>
+	    <groupId>com.h2database</groupId>
+	    <artifactId>h2</artifactId>
+	    <version>1.4.178</version>
+	</dependency>
   </dependencies>
 
-
+ 
   <build>
     <finalName>salesforce</finalName>
     <plugins>
@@ -84,7 +84,7 @@
         </executions>
         <configuration>
           <instructions>
-            <!-- embed our shared org.jboss.keynote2014/json bundle so its included out of the box -->
+            <!--  embed our shared org.jboss.keynote2014/json bundle so its included out of the box-->
             <Embed-Directory>lib</Embed-Directory>
             <Embed-Dependency>*;scope=compile|runtime;artifactId=json|json-simple</Embed-Dependency>
             <Embed-Transitive>true</Embed-Transitive>

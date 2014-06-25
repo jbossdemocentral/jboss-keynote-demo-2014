@@ -20,7 +20,6 @@ public class SendSMSWIH implements WorkItemHandler {
         this.kSession = kSession;
     }
 
-    @Override
     public void executeWorkItem(WorkItem wi, WorkItemManager wim) {
         System.out.println("**************************************************************");
         System.out.println("Executing send SMS WIH : ");
@@ -40,10 +39,10 @@ public class SendSMSWIH implements WorkItemHandler {
                     record.setUserName(name);
                     record.setProcessInstanceId(wi.getProcessInstanceId());
 
-                    JpaPersistenceContextManager jpaContextManager = (JpaPersistenceContextManager) kSession.getEnvironment().get(EnvironmentName.PERSISTENCE_CONTEXT_MANAGER);
-                    EntityManager em = jpaContextManager.getApplicationScopedEntityManager();
+                    //JpaPersistenceContextManager jpaContextManager = (JpaPersistenceContextManager) kSession.getEnvironment().get(EnvironmentName.PERSISTENCE_CONTEXT_MANAGER);
+                    //EntityManager em = jpaContextManager.getApplicationScopedEntityManager();
 
-                    em.merge(record);
+                    //em.merge(record);
 
                     // see that the ID of the user was set by Hibernate
                     System.out.println("SMS Created record: " + record);
@@ -83,7 +82,7 @@ public class SendSMSWIH implements WorkItemHandler {
         }
     }
 
-    @Override
+    
     public void abortWorkItem(WorkItem workItem, WorkItemManager manager) {
 
     }
@@ -110,4 +109,3 @@ public class SendSMSWIH implements WorkItemHandler {
         return null;
     }
 }
-

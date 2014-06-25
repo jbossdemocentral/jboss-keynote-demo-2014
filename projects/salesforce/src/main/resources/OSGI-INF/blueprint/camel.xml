@@ -74,7 +74,7 @@
        </setHeader>
       <log message="Request headers to cxfrs ${headers}  "/>
       <recipientList>
-      	<simple>http://localhost:8184/cxf/route/queryservice/contact/${body}</simple>
+      	<simple>http://localhost:8183/cxf/route/queryservice/contact/${body}</simple>
       </recipientList>
       <unmarshal ref="jackUser"/>
       <log message="Response back from cxfrs ${body}  "/>

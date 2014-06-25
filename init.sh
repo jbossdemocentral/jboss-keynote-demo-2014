@@ -1,6 +1,6 @@
 #!/bin/sh 
 DEMO="Red Hat JBoss Keynote 2014 Demo"
-AUTHORS="Burr Sutter, Eric D. Schabell"
+AUTHORS="Burr Sutter, Eric D. Schabell, Christina Lin"
 PROJECT="git@github.com:eschabell/jboss-keynote-2014.git"
 PRODUCT="JBoss Keynote 2014 Demo"
 JBOSS_HOME=./target/jboss-eap-6.1
@@ -34,7 +34,7 @@ echo "##   #  # #####   #   #   # #####   #   #####   ####  ##### #   # #####   
 echo "##                                                                                                  ##"   
 echo "##                                                                                                  ##"   
 echo "##  brought to you by,                                                                              ##"   
-echo "##             ${AUTHORS}                                                        ##"
+echo "##             ${AUTHORS}                                         ##"
 echo "##                                                                                                  ##"   
 echo "##  ${PROJECT}                                                 ##"
 echo "##                                                                                                  ##"   
@@ -162,7 +162,7 @@ echo Setup H2 Database
 echo
 cd $PRJ_DIR/DBSetup
 mvn process-test-resources
-cd ..
+cd ../..
 
 
 echo

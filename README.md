@@ -40,7 +40,9 @@ There are still manual actions needed to complete the full keynote demo scenario
 
 8. Ensure standalone MQ broker exits, view in the MQ tab on the runtime page, see example image below. 
 
-9. Create Twitter (first)and Salesforce(second) containers in Fuse using above created profiles, see Twitter image below for example.
+9. Create Twitter and add twitter/stream profile containers
+
+	 Create Salesforce and add Kenote/salesforce profile containers in Fuse using above created profiles
 
 10. Tweet message with hashtags #demoup or #demodown, should trigger twitter route and salesforce routes, see example images below.
 
@@ -56,9 +58,7 @@ Add to your `~/.m2/settings.xml` file the fabric server's user and password so t
 
 Issues
 ------
-- Salesforce camel route hangs at insert into database node in route, due to trying to access a mysql DB. Needs to use h2 and insert into BAM dashboard tables for monitoring.
-
-- BPM process at end of salesforce route not yet reached.
+- Need to update BAM datasource. 
 
 
 Supporting articles

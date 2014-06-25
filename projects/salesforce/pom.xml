@@ -22,7 +22,7 @@
     <fabric8.parentProfiles>feature-camel</fabric8.parentProfiles>
     <fabric8.profile>keynote-salesforce</fabric8.profile>
     <fabric8.bundles>wrap:mvn:com.h2database/h2/1.4.178 mvn:commons-pool/commons-pool/1.6 mvn:commons-dbcp/commons-dbcp/1.4</fabric8.bundles>
-    <fabric8.features>camel-http4 camel-mybatis camel-jackson camel-http4 camel-twitter mq-fabric-camel</fabric8.features>
+    <fabric8.features>war camel-cxf cxf camel-http camel-http4 camel-mybatis camel-jackson camel-twitter mq-fabric-camel</fabric8.features>
     <fabric8.featureRepos>mvn:org.apache.camel.karaf/apache-camel/${version:camel}/xml/features</fabric8.featureRepos>
   </properties>
 
@@ -37,6 +37,11 @@
       <artifactId>camel-mybatis</artifactId>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+	    <groupId>org.apache.camel</groupId>
+	    <artifactId>camel-cxf</artifactId>
+	    <scope>provided</scope>	
+	</dependency>
     <dependency>
       <groupId>org.apache.servicemix.bundles</groupId>
       <artifactId>org.apache.servicemix.bundles.twitter4j</artifactId>

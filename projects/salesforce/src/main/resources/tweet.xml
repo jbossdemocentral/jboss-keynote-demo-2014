@@ -19,6 +19,7 @@
       #{id}, #{text}, #{tag}, #{date}, #{name}, #{screenName}, #{salesforce}
     )
   </insert>
-
+  
+ 
 </mapper>
 

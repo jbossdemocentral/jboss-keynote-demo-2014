@@ -44,6 +44,7 @@
     </dependencies>
 
     <build>
+
         <finalName>twitter-stream</finalName>
         <plugins>
             <plugin>

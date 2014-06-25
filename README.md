@@ -30,13 +30,13 @@ There are still manual actions needed to complete the full keynote demo scenario
 
      `fabric:create --wait-for-provisioning`
 
-6. deploy twitter stream keynote profile, in projects/twitter/stream run maven command:
+6. Under projects/twitter/stream run maven command:
 
-     `mvn fabric8:deploy -Dfabric8.jolokiaUrl=http://localhost:8181/jolokia`
+     `mvn fabric8:deploy`
 
-7. deploy salesforce keynote profile, in projects/salesforce run maven command:
+7. Under projects/salesforce run maven command:
 
-     `mvn fabric8:deploy -Dfabric8.jolokiaUrl=http://localhost:8181/jolokia`
+     `mvn fabric8:deploy`
 
 8. Ensure standalone MQ broker exits, view in the MQ tab on the runtime page, see example image below. 
 

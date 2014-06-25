@@ -12,20 +12,20 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.xml.stream.XMLStreamException;
 
 import org.apache.camel.Exchange;
-import org.apache.camel.Handler;
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.Message;
 import org.apache.camel.util.CamelLogger;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
+import org.jboss.keynote.model.User;
 import org.jboss.keynote2014.json.utils.HttpClientUtils;
 import org.jboss.keynote2014.salesforce.integration.BPMNUtils;
+import org.jboss.keynote2014.salesforce.model.TwitterPojo;
 
-public class InvokeBPMN
-{
+public class InvokeBPMN{
     private final CamelLogger logger = new CamelLogger(InvokeBPMN.class.getCanonicalName(), LoggingLevel.INFO);
     
-    private String salesforce;
+    Map<String, String> twitterData = new HashMap<String, String> ();
     
     private String deploymentID;
     private String deploymentVersion;
@@ -34,6 +34,7 @@ public class InvokeBPMN
     private String password;
     private String baseURI;
     
+    private String id;
     private String screenName;
     private String name;
     private String email;
@@ -42,21 +43,56 @@ public class InvokeBPMN
 
     private String dbTrue;
     
-    @Handler
-    public void process(final Exchange exchange)
-        throws IOException, XMLStreamException
-    {
-        final Message message = exchange.getIn();
-        final Map<String, String> map = (Map<String, String>) message.getBody();
-        final boolean salesforce = dbTrue.equals(map.get(this.salesforce));
-        if (salesforce) {
-            logger.log("Creating BPMN process");
+    public void setTwitterData(final Exchange exchange) throws IOException, XMLStreamException{
+    	final Message message = exchange.getIn();
+        final TwitterPojo twitter = (TwitterPojo) message.getBody();
+    	logger.log("====setTwitterData====");
+    	logger.log("twitter:["+twitter+"]");
+    	if(twitter != null){
+    		this.text = twitter.getText();
+    		this.screenName = twitter.getScreenName();
+    		this.id = twitter.getId();
+    		
+    		twitterData.put("id", this.id);   		
+    		twitterData.put("text", this.text);
+    		twitterData.put("tag", twitter.getTag());
+    		twitterData.put("date", twitter.getDate());
+    		twitterData.put("screenName", this.screenName);
+    		twitterData.put("name", twitter.getName());
+        }
+    }
     
-            final String screenName = map.get(this.screenName);
-            final String name = map.get(this.name);
-            final String email = map.get(this.email);
-            final String mobilePhone = map.get(this.mobilePhone);
-            final String text = map.get(this.text);
+    public void setTwitterDBData(final Exchange exchange) throws IOException, XMLStreamException{
+    	
+    	exchange.getOut().setBody(this.twitterData);
+    
+    }
+    
+    
+
+    public void process(final Exchange exchange) throws IOException, XMLStreamException{
+    	
+        final Message message = exchange.getIn();
+        final User client = (User) message.getBody();
+        
+        logger.log("=======process");
+        logger.log("client:["+client+"]");
+        
+        if (client != null) {
+            
+            logger.log("====Invoke BPM Process====");
+            logger.log("email:["+client.getEmail()+"]");
+            logger.log("mobilePhone:["+client.getMobilePhone()+"]");
+            logger.log("text:["+this.text+"]");
+            logger.log("=========================");
+    
+            final String screenName = this.screenName;
+            final String name = client.getFirstName();
+            final String email = client.getEmail();
+            final String mobilePhone = client.getMobilePhone();
+            final String text = this.text;
+           
+    		twitterData.put("salesforce", "true");
     
             createBPMNProcess(screenName, name, email, mobilePhone, text);
         } else {
@@ -64,11 +100,9 @@ public class InvokeBPMN
         }
     }
     
-    private void createBPMNProcess(final String screenName, final String name, final String email,
-        final String mobilePhone, final String text)
-        throws XMLStreamException, IOException
-    {
-        final BPMNUtils bpmnUtils = BPMNUtils.getBPMNUtils();
+    private void createBPMNProcess(final String screenName, final String name, final String email,  final String mobilePhone, final String text) throws XMLStreamException, IOException {
+    	logger.log("=======createBPMNProcess");
+    	final BPMNUtils bpmnUtils = BPMNUtils.getBPMNUtils();
         final String payload = bpmnUtils.startProcess(deploymentID, deploymentVersion, processID,
             screenName, name, email, mobilePhone, text);
         final String uri = bpmnUtils.getRuntimExecuteURI(baseURI, deploymentID);
@@ -94,10 +128,6 @@ public class InvokeBPMN
         }
     }
 
-    public void setSalesforce(final String salesforce)
-    {
-        this.salesforce = salesforce;
-    }
     
     public void setScreenName(final String screenName)
     {
@@ -159,7 +189,15 @@ public class InvokeBPMN
         this.dbTrue = dbTrue;
     }
     
-    public static void main(final String args[])
+    public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public static void main(final String args[])
         throws Exception
     {
         final ExecutorService executor = Executors.newFixedThreadPool(30);

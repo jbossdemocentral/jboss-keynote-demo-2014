@@ -9,16 +9,21 @@
   <settings>
     <setting name="useGeneratedKeys" value="false"/>
   </settings>
+  
+  <!-- Use type aliases to avoid typing the full classname every time. -->
+  <typeAliases>
+    <typeAlias alias="User" type="org.jboss.keynote.model.User"/>
+  </typeAliases>
 
   <!-- setup environment with JDBC data source -->
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
-        <property name="driver" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/BPMS?autoReconnect=true"/>
-        <property name="username" value="demo"/>
-        <property name="password" value="demo"/>
+        <property name="driver" value="org.h2.Driver"/>
+        <property name="url" value="jdbc:h2:file:~/db/BPMS"/>
+        <property name="username" value="sa"/>
+        <property name="password" value=""/>
       </dataSource>
     </environment>
   </environments>
@@ -26,6 +31,7 @@
   <!-- mapping files -->
   <mappers>
     <mapper resource="tweet.xml"/>
+    <mapper resource="User.xml"/>
   </mappers>
 
 </configuration>

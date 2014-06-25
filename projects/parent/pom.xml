@@ -25,7 +25,7 @@
 
         <version.apache.httpcomponents>4.2.5</version.apache.httpcomponents>
   	    <version.json.simple>1.1.1</version.json.simple>
-        <version.fabric8.plugin>1.0.0.redhat-${perfectus-build}</version.fabric8.plugin>
+        <version.fabric8.plugin>1.1.0.CR1</version.fabric8.plugin>
         <version.twitter4j>3.0.5_1</version.twitter4j>
         <version.json.keynote>${project.version}</version.json.keynote>
     </properties>
@@ -46,9 +46,14 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpcore-osgi</artifactId>
+                <artifactId>httpcore-core</artifactId>
                 <version>${version.apache.httpcomponents}</version>
             </dependency>
+            <dependency>
+		    	<groupId>org.apache.httpcomponents</groupId>
+		        <artifactId>httpclient</artifactId>
+		        <version>${version.apache.httpcomponents}</version>
+		    </dependency>
             <dependency>
 	        <groupId>com.googlecode.json-simple</groupId>
 	        <artifactId>json-simple</artifactId>

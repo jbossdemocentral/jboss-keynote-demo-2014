@@ -38,11 +38,16 @@ There are still manual actions needed to complete the full keynote demo scenario
 	  and change the salesforce return details
 	  
 	  `salesforce.email = clin@redhat.com`
+	  
 		`salesforce.mobilePhone = +886983186479`
+		
 		`salesforce.firstName = Christina`
+		
 		`salesforce.lastName = Lin`
+		
 		`salesforce.dept = mkt`
-
+		
+		
 		Under projects/salesforce run maven command:
 
      `mvn fabric8:deploy`

@@ -158,6 +158,13 @@ cd $PRJ_DIR
 mvn clean install -DskipTests
 cd ..
 
+echo Setup H2 Database
+echo
+cd $PRJ_DIR/DBSetup
+mvn process-test-resources
+cd ..
+
+
 echo
 echo Adding built dependencies to business central...
 echo 

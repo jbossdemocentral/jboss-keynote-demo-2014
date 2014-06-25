@@ -40,7 +40,7 @@ There are still manual actions needed to complete the full keynote demo scenario
 
 8. Ensure standalone MQ broker exits, view in the MQ tab on the runtime page, see example image below. 
 
-9. Create Twitter and Salesforce containers in Fuse using above created profiles, see Twitter image below for example.
+9. Create Twitter (first)and Salesforce(second) containers in Fuse using above created profiles, see Twitter image below for example.
 
 10. Tweet message with hashtags #demoup or #demodown, should trigger twitter route and salesforce routes, see example images below.
 

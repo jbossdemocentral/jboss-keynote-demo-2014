@@ -36,8 +36,7 @@ There are still manual actions needed to complete the full keynote demo scenario
 
 7.  Find jboss.keynote2014.salesforce.properties under projects/salesforce/src/main/fabric8
 	  and change the salesforce return details
-		
-		Under projects/salesforce run maven command:
+	  Under projects/salesforce run maven command:
 
      `mvn fabric8:deploy`
 

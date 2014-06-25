@@ -40,9 +40,10 @@ There are still manual actions needed to complete the full keynote demo scenario
 
 8. Ensure standalone MQ broker exits, view in the MQ tab on the runtime page, see example image below. 
 
-9. Create Twitter and add twitter/stream profile containers
-
-	 Create Salesforce and add Kenote/salesforce profile containers in Fuse using above created profiles
+9. Create Twitter and add  keynote-twitter-stream profile containers
+	 ![Twitter Container](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/twitterCon.png?raw=true)
+	 Create Salesforce and add keynote-salesforce profile containers in Fuse using above created profiles
+	 ![Salesforce Container](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/salesforceCon.png?raw=true)
 
 10. Tweet message with hashtags #demoup or #demodown, should trigger twitter route and salesforce routes, see example images below.
 
@@ -56,8 +57,14 @@ Add to your `~/.m2/settings.xml` file the fabric server's user and password so t
       <password>admin</password>
     </server>
 
+
+![Twitter Stream Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/fuse-twitterstream-camel-route.png?raw=true)
+![Saleforce Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/fuse-salesforce-camel-route.png?raw=true)
+![Mock Saleforce Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/mocksalesforce-camel-route.png?raw=true)
+
 Issues
 ------
+- Cannot really send SMS. Don't have a correct account.
 - Need to update BAM datasource. 
 
 
@@ -72,9 +79,6 @@ Released versions
 
 ![Install Console](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/install-console.png?raw=true)
 ![MQ Broker](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-runtime-broker.png?raw=true)
-![Creating Twitter Stream Container](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-create-twitterstream-container.png?raw=true)
-![Twitter Stream Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-twitterstream-camel-route.png?raw=true)
-![Saleforce Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-salesforce-camel-route.png?raw=true)
 
 
 

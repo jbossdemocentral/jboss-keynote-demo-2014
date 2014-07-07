@@ -47,7 +47,7 @@ See Quick Start Guide in project as ODT and PDF for details on installation. For
 
      `mvn fabric8:deploy`
 
-10. Ensure standalone MQ broker exits, view in the MQ tab on the runtime page, see example image below. 
+10. Ensure standalone MQ broker exits, view in the MQ tab on the runtime page (http://localhost:8181 u:admin/p:admin), see example image below. 
 
 11. Create Twitter and add  keynote-twitter-stream profile containers
 	 ![Twitter Container](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/twitterCon.png?raw=true)

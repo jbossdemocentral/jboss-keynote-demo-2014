@@ -31,22 +31,30 @@ There are still manual actions needed to complete the full keynote demo scenario
       <username>admin</username>
       <password>admin</password>
     </server>
+    
+6. Find jboss.keynote2014.twitter.properties under projects/twitter/stream/src/main/fabric8
+	  and change the twitter developer details
+	  
+	  `consumer.key = w0LGk3eptny8oGEKm2oBxheE4`
+	  `consumer.secret = zg7w1NpqmObJsjAuyyzM9OXccjx4q2xQe3YFeicT0Lc5JPn3RR`
+	  `access.token = 144079408-5iFeWba0UatSMQOFukpUYvMlAwF1Sc0VPgFrxE9p`
+	  `access.token-secret = M3GMh7AfwdXItdVbEHu88UHAKOSiV82DRBBWtaKiOPPGJ`   
 
-6. start up fabric in fuse console: 
+7. start up fabric in fuse console: 
 
      `fabric:create --wait-for-provisioning`
 
-7. Under projects/twitter/stream run maven command:
+8 Under projects/twitter/stream run maven command:
 
      `mvn fabric8:deploy`
 
-8. Under projects/salesforce run maven command:
+9. Under projects/salesforce run maven command:
 
      `mvn fabric8:deploy`
 
-9. Ensure standalone MQ broker exits, view in the MQ tab on the runtime page, see example image below. 
+10. Ensure standalone MQ broker exits, view in the MQ tab on the runtime page, see example image below. 
 
-10. Create Twitter and add  keynote-twitter-stream profile containers
+11. Create Twitter and add  keynote-twitter-stream profile containers
 	 ![Twitter Container](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/twitterCon.png?raw=true)
 	 Create Salesforce and add keynote-salesforce profile containers in Fuse using above created profiles
 	 ![Salesforce Container](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/salesforceCon.png?raw=true)

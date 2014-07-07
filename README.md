@@ -91,9 +91,9 @@ Released versions
 
 
 ![Customer Process](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/customer-process.png?raw=true)
+![MQ Broker](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-runtime-broker.png?raw=true)
 ![Twitter Stream Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/fuse-twitterstream-camel-route.png?raw=true)
 ![Saleforce Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/fuse-salesforce-camel-route.png?raw=true)
 ![Mock Saleforce Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/mocksalesforce-camel-route.png?raw=true)
-![MQ Broker](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-runtime-broker.png?raw=true)
 
 

@@ -11,31 +11,29 @@ Setup and configuration
 -----------------------
 See Quick Start Guide in project as ODT and PDF for details on installation. For those that can't wait:
 
-1. clone this project
+1. clone this project.
 
-2. see README in 'installs' directory and add required products 
+2. see README in 'installs' directory and add required products.
 
-3. run 'init.sh' & read output
-   After this setup the basic run for posting Twitter message that triggers this keynote to run camel route, then salesforce route will
-pick up the message to process through, add it to the BAM dashboard datasource for monitoring, then calling a BPM Process. 
-There are still manual actions needed to complete the full keynote demo scenario:
+3. run 'init.sh'. 
 
-4. start JBoss BPM Suite & JBoss Fuse product.
 
-5. add fabric server passwords for Maven Plugin to your `~/.m2/settings.xml` file the fabric server's user and password so that the maven plugin can login to the fabric.
+4. add fabric server passwords for Maven Plugin to your `~/.m2/settings.xml` file the fabric server's user and password so that the maven plugin can login to the fabric.
 
     <server>
       <id>fabric8.upload.repo</id>
       <username>admin</username>
       <password>admin</password>
     </server>
-    
-6. Find jboss.keynote2014.twitter.properties under projects/twitter/stream/src/main/fabric8 and change the twitter developer details to your own credentials you can setup on https://dev.twitter.com by adding a keynote app in your account at https://apps.twitter.com:
+
+5. Find jboss.keynote2014.twitter.properties under projects/twitter/stream/src/main/fabric8 and change the twitter developer details to your own credentials you can setup on https://dev.twitter.com by adding a keynote app in your account at https://apps.twitter.com:
 	  
 	  `consumer.key = w0LGk3eptny8oGEKm2oBxheE4`
 	  `consumer.secret = zg7w1NpqmObJsjAuyyzM9OXccjx4q2xQe3YFeicT0Lc5JPn3RR`
 	  `access.token = 144079408-5iFeWba0UatSMQOFukpUYvMlAwF1Sc0VPgFrxE9p`
 	  `access.token-secret = M3GMh7AfwdXItdVbEHu88UHAKOSiV82DRBBWtaKiOPPGJ`   
+
+6. start JBoss BPM Suite & JBoss Fuse product as instructed.
 
 7. start up fabric in fuse console: 
 

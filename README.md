@@ -16,10 +16,8 @@ See Quick Start Guide in project as ODT and PDF for details on installation. For
 2. see README in 'installs' directory and add required products 
 
 3. run 'init.sh' & read output
-
-After this setup the basic run for posting Twitter message that triggers this keynote to run camel route, then salesforce route will
+   After this setup the basic run for posting Twitter message that triggers this keynote to run camel route, then salesforce route will
 pick up the message to process through, add it to the BAM dashboard datasource for monitoring, then calling a BPM Process. 
-
 There are still manual actions needed to complete the full keynote demo scenario:
 
 4. start JBoss BPM Suite & JBoss Fuse product.

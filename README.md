@@ -44,7 +44,7 @@ There are still manual actions needed to complete the full keynote demo scenario
 
      `fabric:create --wait-for-provisioning`
 
-8 Under projects/twitter/stream run maven command:
+8. Under projects/twitter/stream run maven command:
 
      `mvn fabric8:deploy`
 

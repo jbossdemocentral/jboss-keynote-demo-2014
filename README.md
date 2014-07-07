@@ -30,8 +30,7 @@ There are still manual actions needed to complete the full keynote demo scenario
       <password>admin</password>
     </server>
     
-6. Find jboss.keynote2014.twitter.properties under projects/twitter/stream/src/main/fabric8
-	  and change the twitter developer details
+6. Find jboss.keynote2014.twitter.properties under projects/twitter/stream/src/main/fabric8 and change the twitter developer details to your own credentials you can setup on https://dev.twitter.com by adding a keynote app in your account at https://apps.twitter.com:
 	  
 	  `consumer.key = w0LGk3eptny8oGEKm2oBxheE4`
 	  `consumer.secret = zg7w1NpqmObJsjAuyyzM9OXccjx4q2xQe3YFeicT0Lc5JPn3RR`

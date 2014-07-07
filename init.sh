@@ -14,8 +14,8 @@ SRC_DIR=./installs
 PRJ_DIR=./projects
 EAP=jboss-eap-6.1.1.zip
 FUSE=jboss-fuse-full-6.1.0.redhat-379.zip
-BPMS=jboss-bpms-6.0.1.GA-redhat-4-deployable-eap6.x.zip
-VERSION=6.0.1
+BPMS=jboss-bpms-6.0.2.GA-redhat-5-deployable-eap6.x.zip
+VERSION=6.0.2
 
 # wipe screen.
 clear 

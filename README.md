@@ -24,45 +24,7 @@ There are still manual actions needed to complete the full keynote demo scenario
 
 4. start JBoss BPM Suite & JBoss Fuse product.
 
-5. add fabric server passwords for Maven Plugin, see below cut&paste into .m2/settings.xml.
-
-5. start up fabric in fuse console: 
-
-     `fabric:create --wait-for-provisioning`
-
-6. Under projects/twitter/stream run maven command:
-
-     `mvn fabric8:deploy`
-
-7.  Find jboss.keynote2014.salesforce.properties under projects/salesforce/src/main/fabric8
-	  and change the salesforce return details
-	  
-	  `salesforce.email = clin@redhat.com
-	  
-		salesforce.mobilePhone = +886983186479
-		
-		salesforce.firstName = Christina
-		
-		salesforce.lastName = Lin
-		
-		salesforce.dept = mkt`
-	  
-	  Under projects/salesforce run maven command:
-
-     `mvn fabric8:deploy`
-
-8. Ensure standalone MQ broker exits, view in the MQ tab on the runtime page, see example image below. 
-
-9. Create Twitter and add  keynote-twitter-stream profile containers
-	 ![Twitter Container](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/twitterCon.png?raw=true)
-	 Create Salesforce and add keynote-salesforce profile containers in Fuse using above created profiles
-	 ![Salesforce Container](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/salesforceCon.png?raw=true)
-
-10. Tweet message with hashtags #demoup or #demodown, should trigger twitter route and salesforce routes, see example images below.
-
-Configuring JBoss Fuse Maven Plugin
------------------------------------
-Add to your `~/.m2/settings.xml` file the fabric server's user and password so that the maven plugin can login to the fabric.
+5. add fabric server passwords for Maven Plugin to your `~/.m2/settings.xml` file the fabric server's user and password so that the maven plugin can login to the fabric.
 
     <server>
       <id>fabric8.upload.repo</id>
@@ -70,10 +32,40 @@ Add to your `~/.m2/settings.xml` file the fabric server's user and password so t
       <password>admin</password>
     </server>
 
+6. start up fabric in fuse console: 
 
-![Twitter Stream Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/fuse-twitterstream-camel-route.png?raw=true)
-![Saleforce Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/fuse-salesforce-camel-route.png?raw=true)
-![Mock Saleforce Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/mocksalesforce-camel-route.png?raw=true)
+     `fabric:create --wait-for-provisioning`
+
+7. Under projects/twitter/stream run maven command:
+
+     `mvn fabric8:deploy`
+
+8.  Find jboss.keynote2014.salesforce.properties under projects/salesforce/src/main/fabric8
+	  and change the salesforce return details
+	  
+	  `salesforce.email = clin@redhat.com`
+	  
+		`salesforce.mobilePhone = +886983186479`
+		
+		`salesforce.firstName = Christina`
+		
+		`salesforce.lastName = Lin`
+		
+		`salesforce.dept = mkt`
+	  
+	  Under projects/salesforce run maven command:
+
+     `mvn fabric8:deploy`
+
+9. Ensure standalone MQ broker exits, view in the MQ tab on the runtime page, see example image below. 
+
+10. Create Twitter and add  keynote-twitter-stream profile containers
+	 ![Twitter Container](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/twitterCon.png?raw=true)
+	 Create Salesforce and add keynote-salesforce profile containers in Fuse using above created profiles
+	 ![Salesforce Container](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/salesforceCon.png?raw=true)
+
+11. Tweet message with hashtags #demoup or #demodown, should trigger twitter route and salesforce routes, see example images below.
+
 
 Issues
 ------
@@ -88,10 +80,14 @@ Supporting articles
 
 Released versions
 -----------------
+- v0.2 JBoss Fuse 6.1.0, JBoss BPM Suite 6.0.2, with keynote demo installed.
+
 - v0.1 JBoss Fuse 6.1.0, Keynote demo installed.
 
-![Install Console](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/install-console.png?raw=true)
-![MQ Broker](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-runtime-broker.png?raw=true)
 
+![Twitter Stream Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/fuse-twitterstream-camel-route.png?raw=true)
+![Saleforce Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/fuse-salesforce-camel-route.png?raw=true)
+![Mock Saleforce Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/christina/docs/demo-images/mocksalesforce-camel-route.png?raw=true)
+![MQ Broker](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-runtime-broker.png?raw=true)
 
 

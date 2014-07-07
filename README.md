@@ -40,20 +40,7 @@ There are still manual actions needed to complete the full keynote demo scenario
 
      `mvn fabric8:deploy`
 
-8.  Find jboss.keynote2014.salesforce.properties under projects/salesforce/src/main/fabric8
-	  and change the salesforce return details
-	  
-	  `salesforce.email = clin@redhat.com`
-	  
-		`salesforce.mobilePhone = +886983186479`
-		
-		`salesforce.firstName = Christina`
-		
-		`salesforce.lastName = Lin`
-		
-		`salesforce.dept = mkt`
-	  
-	  Under projects/salesforce run maven command:
+8. Under projects/salesforce run maven command:
 
      `mvn fabric8:deploy`
 
@@ -69,8 +56,21 @@ There are still manual actions needed to complete the full keynote demo scenario
 
 Issues
 ------
-- Cannot really send SMS. Don't have a correct account.
+- Cannot really send SMS. Don't have a correct account. If you setup this paid serivce, can setup salesforce account witth your
+	phone number, edit jboss.keynote2014.salesforce.properties under projects/salesforce/src/main/fabric8 and change the salesforce return details
+	  
+	  `salesforce.email = clin@redhat.com`
+	  
+		`salesforce.mobilePhone = +886983186479`
+		
+		`salesforce.firstName = Christina`
+		
+		`salesforce.lastName = Lin`
+		
+		`salesforce.dept = mkt`
+
 - Need to update BAM datasource. 
+
 
 
 Supporting articles

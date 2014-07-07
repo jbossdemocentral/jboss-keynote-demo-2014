@@ -15,7 +15,7 @@ PRJ_DIR=./projects
 EAP=jboss-eap-6.1.1.zip
 FUSE=jboss-fuse-full-6.1.0.redhat-379.zip
 BPMS=jboss-bpms-6.0.2.GA-redhat-5-deployable-eap6.x.zip
-VERSION=6.0.2
+VERSION=2014
 
 # wipe screen.
 clear 
@@ -188,5 +188,5 @@ echo "You can now start the BPM Suite product with $SERVER_BIN/standalone.sh"
 echo
 echo "You can start the Fuse product with $FUSE_HOME/bin/fuse"
 echo
-echo "The $PRODUCT $VERSION $DEMO Setup Complete."
+echo "The $PRODUCT $DEMO $VERSION Setup Complete."
 echo

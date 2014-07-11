@@ -184,12 +184,21 @@ cp $SUPPORT_DIR/showcaseKPIs.xml $SERVER_DIR/dashbuilder.war/WEB-INF/etc/appdata
 mvn install:install-file -Dfile=$SUPPORT_LIBS/customer-follow-up-1.0.jar -DgroupId=org.jboss.demo -DartifactId=customer-follow-up -Dversion=1.0 -Dpackaging=jar
 
 echo
-echo "Starting the BPM Suite product in the background with $SERVER_BIN/standalone.sh"
-$SERVER_BIN/standalone.sh >/dev/null &
+echo "The last steps to start the project:"
+echo
+echo "1. Start the BPM Suite product in the background with $SERVER_BIN/standalone.sh"
 
+echo
+echo "2. Add the following auth setitngs to your .m2/settings.xml before starting Fuse product:"
+echo
+echo "   <server>"
+echo "      <id>fabric8.upload.repo</id>"
+echo "      <username>admin</username>"
+echo "      <password>admin</password>"
+echo "   </server>"
+
+echo
+echo "3. Start the Fuse product with $FUSE_HOME/bin/fuse"
 echo
 echo "The $PRODUCT $DEMO $VERSION Setup Complete."
 echo
-echo
-echo "Starting the Fuse product with $FUSE_HOME/bin/fuse"
-$FUSE_HOME/bin/fuse

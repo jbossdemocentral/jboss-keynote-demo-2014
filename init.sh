@@ -184,9 +184,12 @@ cp $SUPPORT_DIR/showcaseKPIs.xml $SERVER_DIR/dashbuilder.war/WEB-INF/etc/appdata
 mvn install:install-file -Dfile=$SUPPORT_LIBS/customer-follow-up-1.0.jar -DgroupId=org.jboss.demo -DartifactId=customer-follow-up -Dversion=1.0 -Dpackaging=jar
 
 echo
-echo "You can now start the BPM Suite product with $SERVER_BIN/standalone.sh"
-echo
-echo "You can start the Fuse product with $FUSE_HOME/bin/fuse"
+echo "Starting the BPM Suite product in the background with $SERVER_BIN/standalone.sh"
+$SERVER_BIN/standalone.sh >/dev/null &
+
 echo
 echo "The $PRODUCT $DEMO $VERSION Setup Complete."
 echo
+echo
+echo "Starting the Fuse product with $FUSE_HOME/bin/fuse"
+$FUSE_HOME/bin/fuse

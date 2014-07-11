@@ -31,10 +31,10 @@ See Quick Start Guide in project as ODT and PDF for details on installation. For
 5. Find jboss.keynote2014.twitter.properties under projects/twitter/stream/src/main/fabric8 and change the twitter developer details to your own credentials you can setup on https://dev.twitter.com by adding a keynote app in your account at https://apps.twitter.com:
 	  
 ```
-	  consumer.key = w0LGk3eptny8oGEKm2oBxheE4
-	  consumer.secret = zg7w1NpqmObJsjAuyyzM9OXccjx4q2xQe3YFeicT0Lc5JPn3RR
-	  access.token = 144079408-5iFeWba0UatSMQOFukpUYvMlAwF1Sc0VPgFrxE9p
-	  access.token-secret = M3GMh7AfwdXItdVbEHu88UHAKOSiV82DRBBWtaKiOPPGJ   
+	  consumer.key = w0LGk3ept---oGEKm2oBxheE4
+	  consumer.secret = zg7w1NpqmObJsjA---zM9OXccjx4q2xQe3YFeicT0Lc5JPn3RR
+	  access.token = 144079408-5iFeWba0Ua---QOFukpUYvMlAwF1Sc0VPgFrxE9p
+	  access.token-secret = M3GMh7AfwdXItd---Hu88UHAKOSiV82DRBBWtaKiOPPGJ   
 ```
 
 6. start JBoss BPM Suite & JBoss Fuse product as instructed.

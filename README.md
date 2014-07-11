@@ -11,7 +11,7 @@ Setup and configuration
 -----------------------
 See Quick Start Guide in project as ODT and PDF for details on installation. For those that can't wait:
 
-1. clone this project.
+1. [Download and unzip.](https://github.com/eschabell/jboss-keynote-demo-2014/archive/master.zip) 
 
 2. see README in 'installs' directory and add required products.
 

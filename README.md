@@ -11,7 +11,7 @@ Setup and configuration
 -----------------------
 See Quick Start Guide in project as ODT and PDF for details on installation. For those that can't wait:
 
-1. [Download and unzip.](https://github.com/eschabell/jboss-keynote-demo-2014/archive/master.zip) 
+1. [Download and unzip.](https://github.com/jbossdemocentral/jboss-keynote-demo-2014/archive/master.zip) 
 
 2. see README in 'installs' directory and add required products.
 
@@ -54,9 +54,9 @@ See Quick Start Guide in project as ODT and PDF for details on installation. For
 10. Ensure standalone MQ broker exits, view in the [MQ tab on the runtime page](http://localhost:8181) login (u:admin/p:admin), see example image below. 
 
 11. Create Twitter and add  keynote-twitter-stream profile containers
-	 ![Twitter Container](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/twitterCon.png?raw=true)
+	 ![Twitter Container](https://github.com/jbossdemocentral/jboss-keynote-demo-2014/blob/master/docs/demo-images/twitterCon.png?raw=true)
 	 Create Salesforce and add keynote-salesforce profile containers in Fuse using above created profiles
-	 ![Salesforce Container](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/salesforceCon.png?raw=true)
+	 ![Salesforce Container](https://github.com/jbossdemocentral/jboss-keynote-demo-2014/blob/master/docs/demo-images/salesforceCon.png?raw=true)
 
 11. Tweet message with hashtags #demoup or #demodown, should trigger twitter route and salesforce routes, see below.
 
@@ -87,15 +87,18 @@ Supporting articles
 
 Released versions
 -----------------
+
+- v0.2 moved to JBoss Demo Central.
+
 - v0.2 JBoss Fuse 6.1.0, JBoss BPM Suite 6.0.2, with keynote demo installed.
 
 - v0.1 JBoss Fuse 6.1.0, Keynote demo installed.
 
 
-![Customer Process](https://raw.githubusercontent.com/eschabell/jboss-keynote-demo-2014/master/docs/demo-images/customer-process.png?raw=true)
-![MQ Broker](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-runtime-broker.png?raw=true)
-![Twitter Stream Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-twitterstream-camel-route.png?raw=true)
-![Saleforce Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-salesforce-camel-route.png?raw=true)
-![Mock Saleforce Camel Route](https://github.com/eschabell/jboss-keynote-demo-2014/blob/master/docs/demo-images/mocksalesforce-camel-route.png?raw=true)
+![Customer Process](https://raw.githubusercontent.com/jbossdemocentral/jboss-keynote-demo-2014/master/docs/demo-images/customer-process.png?raw=true)
+![MQ Broker](https://github.com/jbossdemocentral/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-runtime-broker.png?raw=true)
+![Twitter Stream Camel Route](https://github.com/jbossdemocentral/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-twitterstream-camel-route.png?raw=true)
+![Saleforce Camel Route](https://github.com/jbossdemocentral/jboss-keynote-demo-2014/blob/master/docs/demo-images/fuse-salesforce-camel-route.png?raw=true)
+![Mock Saleforce Camel Route](https://github.com/jbossdemocentral/jboss-keynote-demo-2014/blob/master/docs/demo-images/mocksalesforce-camel-route.png?raw=true)
 
 

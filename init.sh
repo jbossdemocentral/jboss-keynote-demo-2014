@@ -1,7 +1,7 @@
 #!/bin/sh 
 DEMO="Red Hat JBoss Keynote 2014 Demo"
 AUTHORS="Burr Sutter, Eric D. Schabell, Christina Lin"
-PROJECT="git@github.com:eschabell/jboss-keynote-2014.git"
+PROJECT="git@github.com:jbossdemocentral/jboss-keynote-2014.git"
 PRODUCT="JBoss Keynote 2014 Demo"
 JBOSS_HOME=./target/jboss-eap-6.1
 FUSE_HOME=./target/jboss-fuse-6.1.0.redhat-379
@@ -36,7 +36,7 @@ echo "##                                                                        
 echo "##  brought to you by,                                                                              ##"   
 echo "##             ${AUTHORS}                                         ##"
 echo "##                                                                                                  ##"   
-echo "##  ${PROJECT}                                                 ##"
+echo "##  ${PROJECT}                                          ##"
 echo "##                                                                                                  ##"   
 echo "######################################################################################################"
 echo
